@@ -20,11 +20,11 @@ num_data = 50000
 num_epochs = 100
 
 
-wandb.init(project="guided_dm", config={
-    'lr': lr,
-    'num_data':num_data,
-    'num_epochs':num_epochs
-})
+# wandb.init(project="guided_dm", config={
+#     'lr': lr,
+#     'num_data':num_data,
+#     'num_epochs':num_epochs
+# })
 
 device = 'cuda'
 
@@ -101,7 +101,7 @@ for epoch in range(num_epochs):
 
     # Print epoch loss
     print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {epoch_loss / (i+1):.4f}')
-    wandb.log({"train_loss": epoch_loss/(i+1)})
+    # wandb.log({"train_loss": epoch_loss/(i+1)})
 
 torch.save(convnet, 'convnet.pth')
 
